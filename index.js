@@ -142,7 +142,7 @@ const init  = () => {
     
         
     function buildTeam() {
-        .then((teamMemberObjArr) => fs.writeFileSync("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8"))
+        then((teamMemberObjArr) => fs.writeFileSync("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8"))
         .then(() => console.log('Successfully wrote to README.md'))
         .catch((err) => console.error(err));
 
