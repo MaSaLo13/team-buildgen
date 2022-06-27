@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require("./lib/Manager");
 const renderTeam = require("./src/html-templates");
-const tests = require("./__tests__");
+// const tests = require("./__tests__");
 // const tests1 = new tests(); 
 
 const teamMemberObjArr = []
