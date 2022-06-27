@@ -2,6 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer")
+const Intern = require("./lib/Intern")
 const renderTeam = require("./src/html-templates");
 // const tests = require("./__tests__");
 // const tests1 = new tests(); 
@@ -93,13 +95,13 @@ const init  = () => {
               },
           ])
           .then(answers => {
-            const Engineer = new Engineer (
+            const engineer = new Engineer (
                 answers.id,
                 answers.name,
                 answers.email,
                 answers.Github,
             )
-            teamMemberObjArr.push(Engineer)
+            teamMemberObjArr.push(engineer)
             addEmployees()
           });
 
@@ -115,7 +117,7 @@ const init  = () => {
             {
               type: 'input',
               name: 'name',
-              message: 'what is the interns name?',
+              message: 'What is the interns name?',
             },
             {
               type: 'input',
@@ -129,13 +131,13 @@ const init  = () => {
               },
           ])
           .then(answers => {
-            const Intern = new Intern (
+            const intern = new Intern (
                 answers.id,
                 answers.name,
                 answers.email,
                 answers.school,
             )
-            teamMemberObjArr.push(Intern)
+            teamMemberObjArr.push(intern)
             addEmployees()
           });
 
