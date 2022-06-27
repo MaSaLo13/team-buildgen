@@ -1,8 +1,10 @@
 // hold info for questions 
-const inquirer = require ('inquirer');
+const inquirer = require('inquirer');
 const fs = require('fs');
-const Manager = require("./lib/manager");
+const Manager = require("./lib/Manager");
 const renderTeam = require("./src/html-templates");
+const tests = require("./__tests__");
+// const tests1 = new tests(); 
 
 const teamMemberObjArr = []
 
@@ -40,7 +42,7 @@ const init  = () => {
             teamMemberObjArr.push(manager)
             addEmployees()
           });
-    };
+    }
 
     function addEmployees() {
         inquirer.prompt([
@@ -66,7 +68,7 @@ const init  = () => {
                     break;
             }
         });
-    };
+    }
 
     function createEngineer() {
         inquirer.prompt([
@@ -102,7 +104,7 @@ const init  = () => {
             addEmployees()
           });
 
-    };
+    }
 
     function createIntern() {
         inquirer.prompt([
@@ -142,13 +144,13 @@ const init  = () => {
     
         
     function buildTeam() {
-        then((teamMemberObjArr) => fs.writeFileSync("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8"))
-        .then(() => console.log('Successfully wrote to README.md'))
+        fs.writeFile("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8")
+        .then(() => console.log('Successfully wrote to index.html'))
         .catch((err) => console.error(err));
 
     };
 
-    createManager()
+    createManager();
 
 };
 

@@ -22,6 +22,7 @@ const makeTeam = team => {
         .map(manager => generateManagerCard(manager))
     )
     return html.join("")
+    };
 
 module.exports = teamHtml => {
     return ` 
@@ -40,7 +41,6 @@ module.exports = teamHtml => {
 </body>
 </html>
     `
-}
 };
 
 //need to do this for engineer and intern
