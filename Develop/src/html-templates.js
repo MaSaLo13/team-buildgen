@@ -15,7 +15,7 @@ const makeTeam = team => {
         </ul>
       </div>`
     }
-    const html = [];
+    // const html = [];
 
     html.push(team
         .filter(employee => employee.getRole() === "Manager")
@@ -54,7 +54,7 @@ const makeTeam = team => {
     </ul>
   </div>`
 }
-// const html = [];
+ const html = [];
 html.push(team
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => generateInternCard(intern))
