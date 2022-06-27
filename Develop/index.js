@@ -7,29 +7,28 @@ const renderTeam = require("./src/html-templates");
 // const tests1 = new tests(); 
 
 const teamMemberObjArr = []
-
 const init  = () => {
     const createManager = () => {
         inquirer.prompt([
           {
             type: 'input',
             name: 'id',
-            message: 'What is the engineer id?',
+            message: 'What is the managers id?',
           },
           {
             type: 'input',
             name: 'name',
-            message: 'what is the engineer name?',
+            message: 'What is the managers name?',
           },
           {
             type: 'input',
             name: 'email',
-            message: 'What is the engineer email?',
+            message: 'What is the managers email?',
           },
           {
               type: 'input',
               name: 'officeNumber',
-              message: 'What is the engineer office number?',
+              message: 'What is the managers office number?',
             },
         ])
         .then(answers => {
@@ -75,22 +74,22 @@ const init  = () => {
             {
               type: 'input',
               name: 'id',
-              message: 'What is the engineer id?',
+              message: 'What is the engineers id?',
             },
             {
               type: 'input',
               name: 'name',
-              message: 'what is the engineer name?',
-            },
+              message: 'What is the engineers name?',
+            }, 
             {
               type: 'input',
               name: 'email',
-              message: 'What is the engineer email?',
-            },
+              message: 'What is the engineers email?',
+            }, 
             {
                 type: 'input',
                 name: 'Github',
-                message: 'What is the engineer Github?',
+                message: 'What is the engineers Github?',
               },
           ])
           .then(answers => {
@@ -111,22 +110,22 @@ const init  = () => {
             {
               type: 'input',
               name: 'id',
-              message: 'What is the intern id?',
+              message: 'What is the interns id?',
             },
             {
               type: 'input',
               name: 'name',
-              message: 'what is the intern name?',
+              message: 'what is the interns name?',
             },
             {
               type: 'input',
               name: 'email',
-              message: 'What is the intern email?',
+              message: 'What is the interns email?',
             },
             {
                 type: 'input',
                 name: 'school',
-                message: 'What is the intern school?',
+                message: 'What is the interns school?',
               },
           ])
           .then(answers => {
