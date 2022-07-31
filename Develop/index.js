@@ -9,13 +9,14 @@ const renderTeam = require("./src/html-templates");
 // const tests1 = new tests(); 
 
 const teamMemberObjArr = []
+
 const init  = () => {
     const createManager = () => {
         inquirer.prompt([
           {
             type: 'input',
             name: 'id',
-            message: 'What is the managers id?',
+            message: 'What is the managers id',
           },
           {
             type: 'input',
@@ -146,8 +147,8 @@ const init  = () => {
         
     function buildTeam() {
         fs.writeFile("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8")
-        .then(() => console.log('Successfully wrote to index.html'))
-        .catch((err) => console.error(err));
+        // .then(() => console.log('Successfully wrote to index.html'))
+        // .catch((err) => console.error(err));
 
     };
 

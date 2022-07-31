@@ -63,7 +63,7 @@ html.push(team
     return html.join("")
     };
 
-module.exports = teamHtml => {
+module.exports = html => {
     return ` 
     <!DOCTYPE html>
 <html lang="en">
