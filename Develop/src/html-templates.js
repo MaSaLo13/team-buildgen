@@ -17,10 +17,10 @@ const makeTeam = team => {
     }
     // const html = [];
 
-    html.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManagerCard(manager))
-    )
+    // html.push(team
+    //     .filter(employee => employee.getRole() === "Manager")
+    //     .map(manager => generateManagerCard(manager))
+    // )
 
     const generateEngineerCard = engineer => {
       return `
@@ -36,10 +36,10 @@ const makeTeam = team => {
     </div>`
   }
   // const html = [];
-  html.push(team
-      .filter(employee => employee.getRole() === "Engineer")
-      .map(engineer => generateEngineerCard(engineer))
-  )
+  // html.push(team
+  //     .filter(employee => employee.getRole() === "Engineer")
+  //     .map(engineer => generateEngineerCard(engineer))
+  // )
 
   const generateInternCard = intern => {
     return `
@@ -55,31 +55,29 @@ const makeTeam = team => {
   </div>`
 }
  const html = [];
+
+ html.push(team
+  .filter(employee => employee.getRole() === "Manager")
+  .map(manager => generateManagerCard(manager))
+)
+
+  html.push(team
+      .filter(employee => employee.getRole() === "Engineer")
+      .map(engineer => generateEngineerCard(engineer))
+  )
+
 html.push(team
     .filter(employee => employee.getRole() === "Intern")
     .map(intern => generateInternCard(intern))
 )
 
     return html.join("")
-    };
+    }
 
-module.exports = html => {
-    return ` 
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
-   ${makeTeam(team)}
-</body>
-</html>
-    `
-};
+
+
+
+
+module.exports = makeTeam;
 
 //need to do this for engineer and intern

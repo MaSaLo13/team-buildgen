@@ -4,11 +4,11 @@ const fs = require('fs');
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer")
 const Intern = require("./lib/Intern")
-const renderTeam = require("./src/html-templates");
+const makeTeam = require("./src/html-templates");
 // const tests = require("./__tests__");
 // const tests1 = new tests(); 
 
-const teamMemberObjArr = []
+const team = []
 
 const init  = () => {
     const createManager = () => {
@@ -146,6 +146,23 @@ const init  = () => {
     
         
     function buildTeam() {
+      const html = ` 
+      <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- CSS only -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <title>Document</title>
+  </head>
+  <body>
+     ${makeTeam(team)}
+  </body>
+  </html>
+      `
+  };
         fs.writeFile("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8")
         // .then(() => console.log('Successfully wrote to index.html'))
         // .catch((err) => console.error(err));
@@ -154,7 +171,7 @@ const init  = () => {
 
     createManager();
 
-};
+
 
 init();
 
