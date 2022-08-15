@@ -54,7 +54,7 @@ const makeTeam = team => {
     </ul>
   </div>`
 }
- const html = [];
+ const html = []
 
  html.push(team
   .filter(employee => employee.getRole() === "Manager")

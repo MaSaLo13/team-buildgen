@@ -2,8 +2,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require("./lib/Manager");
-const Engineer = require("./lib/Engineer")
-const Intern = require("./lib/Intern")
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const makeTeam = require("./src/html-templates");
 // const tests = require("./__tests__");
 // const tests1 = new tests(); 
@@ -41,10 +41,10 @@ const init  = () => {
                 answers.email,
                 answers.officeNumber,
             )
-            teamMemberObjArr.push(manager)
+            team.push(manager)
             addEmployees()
-          });
-    }
+          })
+    };
 
     function addEmployees() {
         inquirer.prompt([
@@ -72,7 +72,7 @@ const init  = () => {
         });
     }
 
-    function createEngineer() {
+    const createEngineer = () => {
         inquirer.prompt([
             {
               type: 'input',
@@ -102,13 +102,13 @@ const init  = () => {
                 answers.email,
                 answers.Github,
             )
-            teamMemberObjArr.push(engineer)
+            team.push(engineer)
             addEmployees()
           });
 
     }
 
-    function createIntern() {
+    const createIntern = () => {
         inquirer.prompt([
             {
               type: 'input',
@@ -138,11 +138,11 @@ const init  = () => {
                 answers.email,
                 answers.school,
             )
-            teamMemberObjArr.push(intern)
+            team.push(intern)
             addEmployees()
           });
 
-    };
+    }
     
         
     function buildTeam() {
@@ -162,16 +162,14 @@ const init  = () => {
   </body>
   </html>
       `
-  };
-        fs.writeFile("./dist/index.html", renderTeam(teamMemberObjArr), "utf-8")
-        // .then(() => console.log('Successfully wrote to index.html'))
-        // .catch((err) => console.error(err));
+  
+        fs.writeFile("./dist/index.html", html , (err) => 
+        err ? console.error(err) : console.log("Success!")
+        )
 
-    };
-
-    createManager();
-
-
+}
+createManager();
+}
 
 init();
 
