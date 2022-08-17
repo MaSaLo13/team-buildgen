@@ -1,4 +1,3 @@
-// hold info for questions 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const Manager = require("./lib/Manager");
