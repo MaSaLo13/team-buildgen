@@ -47,5 +47,5 @@ Users will have to answer prompt in order to fill in the Team Profile Generator
 Once all prompts are answered then you can exit the application by selecting "I'm Done" and an index.html file will be produced in the dist folder that displays their information on individual cards.
 
 ## Links
-- Github Repository: https://github.com/MaSaLo13/team-buildgen
-- Walkthrough:
+- Github: https://github.com/MaSaLo13/team-buildgen
+- Walkthrough Video: https://drive.google.com/file/d/1yvCBguwR78FPaqraftmdbgkOrhX_VdyV/view
